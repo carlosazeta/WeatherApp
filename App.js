@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { View, ActivityIndicator, StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import Tabs from './src/components/Tabs'
+import { useGetWeather } from './src/hooks/useGetWeather'
 
 const App = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, error, weather] = useGetWeather()
+  console.log(loading, error, weather)
 
   return (
     loading
